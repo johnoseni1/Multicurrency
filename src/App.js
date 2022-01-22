@@ -1,8 +1,11 @@
 
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import Login from './Pages/Payment';
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Login from './Pages/Login';
+import CreateWallet from './Pages/Create-wallet';
+import SignUp from './Pages/signup';
+import Wallet from './Pages/Wallet'
 
 // import AppContext from './Contexts/context';
 
@@ -11,9 +14,12 @@ import Login from './Pages/Payment';
 function App() {
   return (
     <Router>
-          <Switch>
-              <Route path="/" exact component={Login} />
-          </Switch>
+          <Routes>
+              <Route path="/" element={<Login/>} />
+              <Route path="/createwallet" element={<CreateWallet/>} />
+              <Route path="/signup" element={<SignUp/>} /> 
+              <Route path="/wallet" element={<Wallet/>} />
+          </Routes>
     </Router>
   );
 }
